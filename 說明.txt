@@ -1,0 +1,45 @@
+admin.sql數據庫       https://github.com/luoyangpeng/Ladmin   https://laravel-china.org/topics/3158/ladmin-background-management-system-blog-system
+
+系统要求
+
+PHP >= 5.6.4
+OpenSSL PHP Extension
+PDO PHP Extension
+Mbstring PHP Extension
+Tokenizer PHP Extension
+XML PHP Extension
+安装
+
+composer install
+创建.env文件
+
+cp .env.example .env
+.env 配置
+
+1.数据库配置
+
+	DB_HOST=localhost			//ip地址
+	DB_DATABASE=root			//数据库名称
+	DB_USERNAME=root			//数据库用户名
+	DB_PASSWORD=secret			//数据库密码
+2.域名配置
+
+   ADMIN_DOMAIN = admin.test.com
+   FRONT_DOMAIN = www.test.com
+   API_DOMAIN   = api.test.com
+   LOGIN_DOMAIN = account.test.com 
+配置好数据库后生产项目秘钥，在项目根目录运行下面命令：
+
+php artisan key:generate
+迁移数据
+
+php artisan migrate
+填充基本数据
+
+php artisan db:seed
+项目访问
+
+前台访问 www.test.com
+api访问 api.test.com
+后台访问 admin.test.com/admin
+后台用户名密码 admin@admin.com 123456
